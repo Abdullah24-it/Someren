@@ -10,7 +10,7 @@ namespace Someren
 
             builder.Services.AddControllersWithViews();
 
-            builder.Services.   AddSingleton<IHomeRepository, DbSomerenRepository>();
+            builder.Services.   AddSingleton<IStudentRepository, DbSomerenRepository>();
 
 
 

@@ -1,0 +1,29 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Delete User";
+}
+
+<h4>Delete User</h4>
+<form action="/Users/Delete" method="POST">
+	<input hidden type="number" name="UserId" value="@Model?.UserId"/>
+
+	<label for="UserName">Name:</label>
+	<input type="text" id="UserName" name="UserName" class="form-control" readonly value="@Model?.UserName" />
+
+	<label for="MobileNumber">Mobile number:</label>
+	<input type="text" id="MobileNumber" name="MobileNumber" class="form-control" readonly value="@Model?.MobileNumber" />
+
+	<label for="Email">Email:</label>
+	<input type="text" id="Email" name="Email" class="form-control" readonly value="@Model?.Email" />
+
+
+
+	<button type="submit" class="btn btn-primary">Delete</button>
+
+</form>
+
+
+<a href="/Users/Index">Back to List</a>
+}
