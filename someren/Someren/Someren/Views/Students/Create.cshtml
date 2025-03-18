@@ -4,19 +4,26 @@
 @{
 	ViewData["Title"] = "Create User";
 }
-<h4>Create User</h4>
-<form action="/Users/Create" method="POST">
-	<label for="name">Name:</label>
-	<input type="text" id="UserName" name="UserName" class="form-control" required value="@Model?.UserName" />
+<h4>Create Student</h4>
+<form action="/Students/Create" method="POST">
+	<input hidden type="number" name="StudentId" value="@Model?.StudentId" />
 
-	<label for="mobilenumber">Phone number:</label>
-	<input type="message" id="MobileNumber" name="MobileNumber" class="form-control" required value="@Model?.MobileNumber" />
+	<label for="StudentNumber">Student number:</label>
+	<input type="text" id="StudentNumber" name="StudentNumber" class="form-control" required value="@Model?.StudentNumber" />
 
-	<label for="email">Email:</label>
-	<input type="message" id="Email" name="Email" class="form-control" required value="@Model?.Email" />
+	<label for="FirstName">First Name:</label>
+	<input type="text" id="FirstName" name="FirstName" class="form-control" required value="@Model?.FirstName" />
 
-	<label for="password">Password:</label>
-	<input type="password" id="Password" name="Password" class="form-control" required value="@Model?.Password" />
+	<label for="LastName">Last Name:</label>
+	<input type="text" id="LastName" name="LastName" class="form-control" required value="@Model?.LastName" />
+
+	<label for="PhoneNumber">Phone number:</label>
+	<input type="text" id="PhoneNumber" name="PhoneNumber" class="form-control" required value="@Model?.PhoneNumber" />
+
+	<label for="Class">Class:</label>
+	<input type="text" id="Class" name="Class" class="form-control" required value="@Model?.Class" />
+	
+
 
 
 
@@ -26,6 +33,6 @@
 
 </form>
 
-<a href="/Users/Index">Back to List</a>
+<a href="/Students/Index">Back to List</a>
 
-}
+

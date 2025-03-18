@@ -1,0 +1,35 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@{
+	ViewData["Title"] = "Delete Room";
+}
+
+<h4>Delete Room</h4>
+<form action="/Rooms/Delete" method="POST">
+	<input hidden type="number" name="RoomId" value="@Model?.RoomId" />
+
+	<label for="RoomNumber">Room number:</label>
+	<input type="text" id="RoomNumber" name="RoomNumber" class="form-control" readonly value="@Model?.RoomNumber" />
+
+	<label for="AmountOfBeds">Amount of beds:</label>
+	<input type="text" id="AmountOfBeds" name="AmountOfBeds" class="form-control" readonly value="@Model?.AmountOfBeds" />
+
+	<label for="FloorNumber">Floor number:</label>
+	<input type="text" id="FloorNumber" name="FloorNumber" class="form-control" readonly value="@Model?.FloorNumber" />
+
+	<label for="BuildingName">Building name:</label>
+	<input type="text" id="BuildingName" name="BuildingName" class="form-control" readonly value="@Model?.BuildingName" />
+
+
+
+
+
+	<button type="submit" class="btn btn-primary">Delete</button>
+
+</form>
+
+
+<a href="/Rooms/Index">Back to List</a>
+
