@@ -1,0 +1,32 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@{
+	ViewData["Title"] = "Edit Lecturer";
+}
+<h4>Edit Lecturer</h4>
+<form action="/Lecturers/Edit" method="POST">
+	<input hidden type="number" name="LecturerId" value="@Model?.LecturerId" />
+
+	<label for="FirstName">First Name:</label>
+	<input type="text" id="FirstName" name="FirstName" class="form-control" required value="@Model?.FirstName" />
+
+	<label for="LastName">Last Name:</label>
+	<input type="text" id="LastName" name="LastName" class="form-control" required value="@Model?.LastName" />
+
+	<label for="PhoneNumber">Phone number:</label>
+	<input type="text" id="PhoneNumber" name="PhoneNumber" class="form-control" required value="@Model?.PhoneNumber" />
+
+	<label for="Age">Age:</label>
+	<input type="text" id="Age" name="Age" class="form-control" required value="@Model?.Age" />
+
+
+
+
+	<button type="submit" class="btn btn-primary">Save</button>
+
+
+</form>
+
+<a href="/Lecturers/Index">Back to List</a>

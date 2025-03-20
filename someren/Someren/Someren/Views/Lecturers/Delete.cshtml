@@ -1,0 +1,34 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+
+@{
+	ViewData["Title"] = "Delete Lecturer";
+}
+<h4>Create Lecturer</h4>
+<form action="/Lecturers/Delete" method="POST">
+	<input hidden type="number" name="LecturerId" value="@Model?.LecturerId" />
+
+	<label for="FirstName">First Name:</label>
+	<input type="text" id="FirstName" name="FirstName" class="form-control" readonly value="@Model?.FirstName" />
+
+	<label for="LastName">Last Name:</label>
+	<input type="text" id="LastName" name="LastName" class="form-control" readonly value="@Model?.LastName" />
+
+	<label for="PhoneNumber">Phone number:</label>
+	<input type="text" id="PhoneNumber" name="PhoneNumber" class="form-control" readonly value="@Model?.PhoneNumber" />
+
+	<label for="Age">Age:</label>
+	<input type="text" id="Age" name="Age" class="form-control" readonly value="@Model?.Age" />
+
+
+
+
+	<button type="submit" class="btn btn-primary">Delete</button>
+
+
+</form>
+
+<a href="/Lecturers/Index">Back to List</a>
+

@@ -1,0 +1,25 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+
+@{
+	ViewData["Title"] = "Edit Activity";
+}
+<h4>Edit Activity</h4>
+<form action="/Activities/Edit" method="POST">
+	<input hidden type="number" name="ActivityId" value="@Model?.ActivityId" />
+
+	<label for="ActivityName">Activity name:</label>
+	<input type="text" id="ActivityName" name="ActivityName" class="form-control" required value="@Model?.ActivityName" />
+
+	<label for="ActivityDate">Activity date:</label>
+	<input type="text" id="ActivityDate" name="ActivityDate" class="form-control" required value="@Model?.ActivityDate" />
+
+
+	<button type="submit" class="btn btn-primary">Edit</button>
+
+
+</form>
+
+<a href="/Activities/Index">Back to List</a>

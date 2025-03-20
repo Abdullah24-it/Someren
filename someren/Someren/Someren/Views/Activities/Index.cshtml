@@ -1,0 +1,38 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@{
+    ViewData["Title"] = "Activities";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Activities</h1>
+    <a href="/Activities/Create">Create New</a>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Activity Name</th>
+            <th>Activity Date</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @{
+            foreach (var activity in Model)
+            {
+                <tr>
+                    <td>@activity.ActivityName</td>
+                    <td>@activity.ActivityDate</td>
+                    <td>
+                        <a href="/Activities/Edit/@activity.ActivityId">Edit</a> |
+                        <a href="/Activities/Delete/@activity.ActivityId">Delete</a>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

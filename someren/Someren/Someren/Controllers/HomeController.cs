@@ -18,6 +18,11 @@ namespace Someren.Controllers
             return View();
         }
 
+        public IActionResult GetAllStudents()
+        {
+            return View();
+        }   
+
         public IActionResult Privacy()
         {
             return View();
