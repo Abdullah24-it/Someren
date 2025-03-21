@@ -1,25 +1,34 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-
-
+﻿
 @{
-	ViewData["Title"] = "Delete Activity";
+    ViewData["Title"] = "Delete Activity";
 }
-<h4>Delete Activity</h4>
-<form action="/Activities/Delete" method="POST">
-	<input hidden type="number" name="ActivityId" value="@Model?.ActivityId" />
 
-	<label for="ActivityName">Activity name:</label>
-	<input type="text" id="ActivityName" name="ActivityName" class="form-control" readonly value="@Model?.ActivityName" />
+<div class="container mt-5">
+    <div class="card shadow-lg border-danger">
+        <div class="card-header bg-danger text-white">
+            <h4 class="mb-0">Delete Activity</h4>
+        </div>
+        <div class="card-body">
+            <p class="text-danger"><strong>Warning:</strong> Are you sure you want to delete this activity? This action <strong>cannot be undone</strong>.</p>
 
-	<label for="ActivityDate">Activity date:</label>
-	<input type="text" id="ActivityDate" name="ActivityDate" class="form-control" readonly value="@Model?.ActivityDate" />
+            <form action="/Activities/Delete" method="POST">
+                <input type="hidden" name="ActivityId" value="@Model?.ActivityId" />
 
+                <div class="mb-3">
+                    <label for="ActivityName" class="form-label fw-bold">Activity Name</label>
+                    <input type="text" id="ActivityName" name="ActivityName" class="form-control" readonly value="@Model?.ActivityName" />
+                </div>
 
-	<button type="submit" class="btn btn-primary">Delete</button>
+                <div class="mb-3">
+                    <label for="ActivityDate" class="form-label fw-bold">Activity Date</label>
+                    <input type="text" id="ActivityDate" name="ActivityDate" class="form-control" readonly value="@Model?.ActivityDate?.ToString("yyyy-MM-dd")" />
+                </div>
 
-
-</form>
-
-<a href="/Activities/Index">Back to List</a>
+                <div class="d-flex justify-content-between">
+                    <a href="/Activities/Index" class="btn btn-secondary">Cancel</a>
+                    <button type="submit" class="btn btn-danger">Delete Activity</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

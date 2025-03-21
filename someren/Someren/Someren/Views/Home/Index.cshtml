@@ -2,7 +2,22 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container vh-100 d-flex flex-column align-items-center justify-content-center text-center">
+    <div class="w-100">
+        <h1 class="display-3 fw-bold text-primary">Welcome to Someren</h1>
+        <p class="lead">Manage your activities, students, rooms, and lecturers with ease.</p>
+
+        <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
+            <a href="/Activities/Index" class="btn btn-lg btn-success shadow-sm px-4">Activities</a>
+            <a href="/Students/Index" class="btn btn-lg btn-info text-white shadow-sm px-4">Students</a>
+            <a href="/Lecturers/Index" class="btn btn-lg btn-warning shadow-sm px-4">Lecturers</a>
+            <a href="/Rooms/Index" class="btn btn-lg btn-secondary shadow-sm px-4">Rooms</a>
+        </div>
+
+        <div class="mt-5">
+            <p class="text-muted">
+                Learn more about <a href="https://learn.microsoft.com/aspnet/core" target="_blank" class="text-decoration-none fw-bold">building Web apps with ASP.NET Core</a>.
+            </p>
+        </div>
+    </div>
 </div>

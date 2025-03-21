@@ -1,29 +1,26 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿
 @{
     ViewData["Title"] = "Lecturers";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Lecturers</h1>
-    <a href="/Lecturers/Create">Create New</a>
-</div>
+<div class="container mt-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="display-6">Lecturers</h1>
+        <a class="btn btn-success shadow-sm" href="/Lecturers/Create">+ Create New</a>
+    </div>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Phone Number</th>
-            <th>Age</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-
-    <tbody>
-        @{
-            foreach (var lecturer in Model)
+    <table class="table table-hover table-bordered shadow-sm">
+        <thead class="table-dark">
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Phone Number</th>
+                <th>Age</th>
+                <th style="width: 150px;">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var lecturer in Model)
             {
                 <tr>
                     <td>@lecturer.FirstName</td>
@@ -31,12 +28,11 @@
                     <td>@lecturer.PhoneNumber</td>
                     <td>@lecturer.Age</td>
                     <td>
-                        <a href="/Lecturers/Edit/@lecturer.LecturerId">Edit</a> |
-                        <a href="/Lecturers/Delete/@lecturer.LecturerId">Delete</a>
+                        <a class="btn btn-sm btn-warning me-2" href="/Lecturers/Edit/@lecturer.LecturerId">Edit</a>
+                        <a class="btn btn-sm btn-danger" href="/Lecturers/Delete/@lecturer.LecturerId">Delete</a>
                     </td>
                 </tr>
             }
-        }
-    </tbody>
-</table>
-
+        </tbody>
+    </table>
+</div>

@@ -1,34 +1,42 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-
+﻿
 @{
 	ViewData["Title"] = "Create Room";
 }
-<h4>Create Room</h4>
-<form action="/Rooms/Create" method="POST">
-	<input hidden type="number" name="RoomId" value="@Model?.RoomId" />
 
-	<label for="RoomNumber">Room number:</label>
-	<input type="text" id="RoomNumber" name="RoomNumber" class="form-control" required value="@Model?.RoomNumber" />
+<div class="container mt-5">
+	<div class="card shadow-lg">
+		<div class="card-header bg-primary text-white">
+			<h4 class="mb-0">Create Room</h4>
+		</div>
+		<div class="card-body">
+			<form action="/Rooms/Create" method="POST">
+				<input type="hidden" name="RoomId" value="@Model?.RoomId" />
 
-	<label for="AmountOfBeds">Amount of beds:</label>
-	<input type="text" id="AmountOfBeds" name="AmountOfBeds" class="form-control" required value="@Model?.AmountOfBeds" />
+				<div class="mb-3">
+					<label for="RoomNumber" class="form-label fw-bold">Room Number</label>
+					<input type="text" id="RoomNumber" name="RoomNumber" class="form-control" required value="@Model?.RoomNumber" placeholder="e.g. A101" />
+				</div>
 
-	<label for="FloorNumber">Floor number:</label>
-	<input type="text" id="FloorNumber" name="FloorNumber" class="form-control" required value="@Model?.FloorNumber" />
+				<div class="mb-3">
+					<label for="AmountOfBeds" class="form-label fw-bold">Amount of Beds</label>
+					<input type="number" id="AmountOfBeds" name="AmountOfBeds" class="form-control" required min="1" value="@Model?.AmountOfBeds" placeholder="e.g. 8" />
+				</div>
 
-	<label for="BuildingName">Building name:</label>
-	<input type="text" id="BuildingName" name="BuildingName" class="form-control" required value="@Model?.BuildingName" />
+				<div class="mb-3">
+					<label for="FloorNumber" class="form-label fw-bold">Floor Number</label>
+					<input type="number" id="FloorNumber" name="FloorNumber" class="form-control" required value="@Model?.FloorNumber" placeholder="e.g. 1" />
+				</div>
 
+				<div class="mb-3">
+					<label for="BuildingName" class="form-label fw-bold">Building Name</label>
+					<input type="text" id="BuildingName" name="BuildingName" class="form-control" required value="@Model?.BuildingName" placeholder="e.g. Building A" />
+				</div>
 
-
-
-	<button type="submit" class="btn btn-primary">Add</button>
-
-
-</form>
-
-<a href="/Rooms/Index">Back to List</a>
-
-
+				<div class="d-flex justify-content-between">
+					<a href="/Rooms/Index" class="btn btn-secondary">Back to List</a>
+					<button type="submit" class="btn btn-success">Add Room</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

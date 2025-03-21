@@ -1,35 +1,46 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-
+﻿
 @{
 	ViewData["Title"] = "Delete Room";
 }
 
-<h4>Delete Room</h4>
-<form action="/Rooms/Delete" method="POST">
-	<input hidden type="number" name="RoomId" value="@Model?.RoomId" />
+<div class="container mt-5">
+	<div class="card shadow-lg border-danger">
+		<div class="card-header bg-danger text-white">
+			<h4 class="mb-0">Delete Room</h4>
+		</div>
+		<div class="card-body">
+			<p class="text-danger fw-semibold mb-4">
+				Are you sure you want to delete this room? This action <strong>cannot be undone.</strong>
+			</p>
 
-	<label for="RoomNumber">Room number:</label>
-	<input type="text" id="RoomNumber" name="RoomNumber" class="form-control" readonly value="@Model?.RoomNumber" />
+			<form action="/Rooms/Delete" method="POST">
+				<input type="hidden" name="RoomId" value="@Model?.RoomId" />
 
-	<label for="AmountOfBeds">Amount of beds:</label>
-	<input type="text" id="AmountOfBeds" name="AmountOfBeds" class="form-control" readonly value="@Model?.AmountOfBeds" />
+				<div class="mb-3">
+					<label class="form-label fw-bold">Room Number</label>
+					<input type="text" class="form-control" readonly value="@Model?.RoomNumber" />
+				</div>
 
-	<label for="FloorNumber">Floor number:</label>
-	<input type="text" id="FloorNumber" name="FloorNumber" class="form-control" readonly value="@Model?.FloorNumber" />
+				<div class="mb-3">
+					<label class="form-label fw-bold">Amount of Beds</label>
+					<input type="text" class="form-control" readonly value="@Model?.AmountOfBeds" />
+				</div>
 
-	<label for="BuildingName">Building name:</label>
-	<input type="text" id="BuildingName" name="BuildingName" class="form-control" readonly value="@Model?.BuildingName" />
+				<div class="mb-3">
+					<label class="form-label fw-bold">Floor Number</label>
+					<input type="text" class="form-control" readonly value="@Model?.FloorNumber" />
+				</div>
 
+				<div class="mb-3">
+					<label class="form-label fw-bold">Building Name</label>
+					<input type="text" class="form-control" readonly value="@Model?.BuildingName" />
+				</div>
 
-
-
-
-	<button type="submit" class="btn btn-primary">Delete</button>
-
-</form>
-
-
-<a href="/Rooms/Index">Back to List</a>
-
+				<div class="d-flex justify-content-between">
+					<a href="/Rooms/Index" class="btn btn-secondary">Cancel</a>
+					<button type="submit" class="btn btn-danger">Delete Room</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

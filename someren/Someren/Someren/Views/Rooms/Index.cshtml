@@ -1,30 +1,26 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-
+﻿
 @{
     ViewData["Title"] = "Rooms";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Rooms</h1>
-    <a href="/Rooms/Create">Create New</a>
-</div>
+<div class="container mt-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="display-6">Rooms</h1>
+        <a class="btn btn-success shadow-sm" href="/Rooms/Create">+ Create New</a>
+    </div>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>Room number</th>
-            <th>Amount of beds</th>
-            <th>Floor number</th>
-            <th>Building name</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-
-    <tbody>
-        @{
-            foreach (var room in Model)
+    <table class="table table-hover table-bordered shadow-sm">
+        <thead class="table-dark">
+            <tr>
+                <th>Room Number</th>
+                <th>Amount of Beds</th>
+                <th>Floor Number</th>
+                <th>Building Name</th>
+                <th style="width: 150px;">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var room in Model)
             {
                 <tr>
                     <td>@room.RoomNumber</td>
@@ -32,12 +28,11 @@
                     <td>@room.FloorNumber</td>
                     <td>@room.BuildingName</td>
                     <td>
-                        <a href="/Rooms/Edit/@room.RoomId">Edit</a> |
-                        <a href="/Rooms/Delete/@room.RoomId">Delete</a>
+                        <a class="btn btn-sm btn-warning me-2" href="/Rooms/Edit/@room.RoomId">Edit</a>
+                        <a class="btn btn-sm btn-danger" href="/Rooms/Delete/@room.RoomId">Delete</a>
                     </td>
                 </tr>
             }
-        }
-    </tbody>
-</table>
-
+        </tbody>
+    </table>
+</div>

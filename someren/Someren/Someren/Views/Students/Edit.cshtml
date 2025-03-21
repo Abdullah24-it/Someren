@@ -1,38 +1,47 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿
 @{
     ViewData["Title"] = "Edit Student";
 }
 
-<h4>Edit User</h4>
-<form action="/Students/Edit" method="POST">
-	<input hidden type="number" name="StudentId" value="@Model?.StudentId" />
+<div class="container mt-5">
+    <div class="card shadow-lg">
+        <div class="card-header bg-warning text-dark">
+            <h4 class="mb-0">Edit Student</h4>
+        </div>
+        <div class="card-body">
+            <form action="/Students/Edit" method="POST">
+                <input type="hidden" name="StudentId" value="@Model?.StudentId" />
 
-	<label for="StudentNumber">Student number:</label>
-	<input type="text" id="StudentNumber" name="StudentNumber" class="form-control" required value="@Model?.StudentNumber" />
+                <div class="mb-3">
+                    <label for="StudentNumber" class="form-label fw-bold">Student Number</label>
+                    <input type="text" id="StudentNumber" name="StudentNumber" class="form-control" required value="@Model?.StudentNumber" placeholder="Enter student number" />
+                </div>
 
-	<label for="FirstName">First Name:</label>
-	<input type="text" id="FirstName" name="FirstName" class="form-control" required value="@Model?.FirstName" />
+                <div class="mb-3">
+                    <label for="FirstName" class="form-label fw-bold">First Name</label>
+                    <input type="text" id="FirstName" name="FirstName" class="form-control" required value="@Model?.FirstName" placeholder="Enter first name" />
+                </div>
 
-	<label for="LastName">Last Name:</label>
-	<input type="text" id="LastName" name="LastName" class="form-control" required value="@Model?.LastName" />
+                <div class="mb-3">
+                    <label for="LastName" class="form-label fw-bold">Last Name</label>
+                    <input type="text" id="LastName" name="LastName" class="form-control" required value="@Model?.LastName" placeholder="Enter last name" />
+                </div>
 
-	<label for="PhoneNumber">Phone number:</label>
-	<input type="text" id="PhoneNumber" name="PhoneNumber" class="form-control" required value="@Model?.PhoneNumber" />
+                <div class="mb-3">
+                    <label for="PhoneNumber" class="form-label fw-bold">Phone Number</label>
+                    <input type="text" id="PhoneNumber" name="PhoneNumber" class="form-control" required value="@Model?.PhoneNumber" placeholder="Enter phone number" />
+                </div>
 
-	<label for="Class">Class:</label>
-	<input type="text" id="Class" name="Class" class="form-control" required value="@Model?.Class" />
+                <div class="mb-3">
+                    <label for="Class" class="form-label fw-bold">Class</label>
+                    <input type="text" id="Class" name="Class" class="form-control" required value="@Model?.Class" placeholder="e.g. IT1A" />
+                </div>
 
-	
-
-
-
-
-	<button type="submit" class="btn btn-primary">Save</button>
-
-</form>
-
-
-<a href="/Students/Index">Back to List</a>
-
+                <div class="d-flex justify-content-between">
+                    <a href="/Students/Index" class="btn btn-secondary">Back to List</a>
+                    <button type="submit" class="btn btn-warning text-white">Save Changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

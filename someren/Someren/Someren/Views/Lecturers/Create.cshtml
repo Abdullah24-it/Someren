@@ -1,33 +1,42 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-
-
+﻿
 @{
-	ViewData["Title"] = "Create Lecturer";
+    ViewData["Title"] = "Create Lecturer";
 }
-<h4>Create Lecturer</h4>
-<form action="/Lecturers/Create" method="POST">
-	<input hidden type="number" name="LecturerId" value="@Model?.LecturerId" />
 
-	<label for="FirstName">First Name:</label>
-	<input type="text" id="FirstName" name="FirstName" class="form-control" required value="@Model?.FirstName" />
+<div class="container mt-5">
+    <div class="card shadow-lg">
+        <div class="card-header bg-primary text-white">
+            <h4 class="mb-0">Create Lecturer</h4>
+        </div>
+        <div class="card-body">
+            <form action="/Lecturers/Create" method="POST">
+                <input type="hidden" name="LecturerId" value="@Model?.LecturerId" />
 
-	<label for="LastName">Last Name:</label>
-	<input type="text" id="LastName" name="LastName" class="form-control" required value="@Model?.LastName" />
+                <div class="mb-3">
+                    <label for="FirstName" class="form-label fw-bold">First Name</label>
+                    <input type="text" id="FirstName" name="FirstName" class="form-control" required value="@Model?.FirstName" placeholder="Enter first name" />
+                </div>
 
-	<label for="PhoneNumber">Phone number:</label>
-	<input type="text" id="PhoneNumber" name="PhoneNumber" class="form-control" required value="@Model?.PhoneNumber" />
+                <div class="mb-3">
+                    <label for="LastName" class="form-label fw-bold">Last Name</label>
+                    <input type="text" id="LastName" name="LastName" class="form-control" required value="@Model?.LastName" placeholder="Enter last name" />
+                </div>
 
-	<label for="Age">Age:</label>
-	<input type="text" id="Age" name="Age" class="form-control" required value="@Model?.Age" />
+                <div class="mb-3">
+                    <label for="PhoneNumber" class="form-label fw-bold">Phone Number</label>
+                    <input type="text" id="PhoneNumber" name="PhoneNumber" class="form-control" required value="@Model?.PhoneNumber" placeholder="Enter phone number" />
+                </div>
 
+                <div class="mb-3">
+                    <label for="Age" class="form-label fw-bold">Age</label>
+                    <input type="number" id="Age" name="Age" class="form-control" required value="@Model?.Age" placeholder="Enter age" min="18" max="100" />
+                </div>
 
-
-
-	<button type="submit" class="btn btn-primary">Add</button>
-
-
-</form>
-
-<a href="/Lecturers/Index">Back to List</a>
+                <div class="d-flex justify-content-between">
+                    <a href="/Lecturers/Index" class="btn btn-secondary">Back to List</a>
+                    <button type="submit" class="btn btn-success">Add Lecturer</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
